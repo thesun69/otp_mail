@@ -5,7 +5,7 @@ const cors = require('cors');
 const fs = require('fs'); // Add this line to require the 'fs' module
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Use Heroku's port or 3000 if running locally
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -54,6 +54,7 @@ app.post('/sendOtp', async (req, res) => {
         res.send({ success: false, error: error.message });
     }
 });
+
 
 app.post('/verifyOtp', (req, res) => {
     console.log("Received request to verify OTP");
