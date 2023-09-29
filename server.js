@@ -2,10 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const fs = require('fs'); // Add this line to require the 'fs' module
+const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Use Heroku's port or 3000 if running locally
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -42,7 +42,7 @@ app.post('/sendOtp', async (req, res) => {
     let mailOptions = {
         from: 'ecash-otpservice@outlook.com',
         to: email,
-        subject: 'Verification Code for EcashXecCrypto.com',
+        subject: 'OTP Code for EcashXecCrypto.com',
         html: getEmailHtml(otp)
     };
 
