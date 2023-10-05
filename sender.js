@@ -32,15 +32,15 @@ app.post('/sendOtp', async (req, res) => {
     
 
     let transporter = nodemailer.createTransport({
-        service: 'mail.ecashxeccrypto.com',
+        service: 'Outlook365',
         auth: {
-            user: 'support@ecashxeccrypto.com',
-            pass: '?iYQKf_G5o64q6'
+            user: 'ecash-otpservice@outlook.com',
+            pass: 'd7W@#ufydgr4589'
         }
     });
 
     let mailOptions = {
-        from: 'support@ecashxeccrypto.com',
+        from: 'ecash-otpservice@outlook.com',
         to: email,
         subject: 'OTP Code for EcashXecCrypto.com',
         html: getEmailHtml(otp)
