@@ -33,8 +33,6 @@ app.post('/sendOtp', async (req, res) => {
 
     let transporter = nodemailer.createTransport({
         service: 'smtp.hostinger.com',
-        port: 465,
-        secure: true,
         auth: {
             user: 'otpsender@devsun.tech',
             pass: '(i1I^:8,GPRu*c6alTVgy=BjKW34dS$U.Dh@k&mMOs+r)'
