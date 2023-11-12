@@ -29,10 +29,11 @@ app.post('/sendOtp', async (req, res) => {
 
     otp = Math.floor(100000 + Math.random() * 900000);
     otpEmail = email;
-    
 
     let transporter = nodemailer.createTransport({
-        service: 'smtp.hostinger.com',
+        host: 'smtp.hostinger.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
         auth: {
             user: 'otpsender@devsun.tech',
             pass: '(i1I^:8,GPRu*c6alTVgy=BjKW34dS$U.Dh@k&mMOs+r)'
@@ -40,10 +41,10 @@ app.post('/sendOtp', async (req, res) => {
     });
 
     let mailOptions = {
-        from: 'otpsender@devsun.tech',
-        to: email,
-        subject: 'OTP Code',
-        html: getEmailHtml(otp)
+        from: '"EcashXecCrypto" <otpsender@devsun.tech>', // sender address
+        to: email, // list of receivers
+        subject: 'OTP Code', // Subject line
+        html: getEmailHtml(otp) // html body
     };
 
     try {
