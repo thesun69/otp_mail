@@ -1,2 +1,2 @@
 # otp_mail
-Send Otp code to Email to Flutter app
+Send Otp code to Email for Flutter app
